@@ -2,13 +2,13 @@ const mysql = require("mysql2");
 
 const db_connection = mysql
   .createConnection({
-    host: "localhost", // HOST NAME
-    user: "crud", // USER NAME
-    database: "node_auth_api", // DATABASE NAME
-    password: "12345", // DATABASE PASSWORD
+    host: "localhost",
+    user: "crud",
+    database: "node_auth_api",
+    password: "12345",
   })
   .on("error", (err) => {
-    console.log("Failed to connect to Database - ", err);
+    console.log("Gagal connect ke Database - ", err);
   });
 
 module.exports = db_connection;

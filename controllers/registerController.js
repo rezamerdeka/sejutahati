@@ -18,7 +18,7 @@ exports.register = async(req,res,next) => {
 
         if (row.length > 0) {
             return res.status(201).json({
-                message: "The username already in use",
+                message: "Username tidak tersedia",
             });
         }
 
@@ -31,7 +31,7 @@ exports.register = async(req,res,next) => {
 
         if (rows.affectedRows === 1) {
             return res.status(201).json({
-                message: "The user has been successfully inserted.",
+                message: "Username berhasil di daftarkan",
             });
         }
         

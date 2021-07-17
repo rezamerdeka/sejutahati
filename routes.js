@@ -6,7 +6,6 @@ const {getUser} = require('./controllers/getUserController');
 const validators = require('./validators');
 const delController = require('./controllers/delController');
 const updateController = require('./controllers/updateController');
-const userController = require('./controllers/userController');
 
 router.patch(
     '/update-user/:id',
@@ -23,21 +22,21 @@ router.delete(
     );
 
 router.post('/register', [
-    body('username',"The name must be of minimum 3 characters length")
+    body('username',"username minimal 3 karakter")
     .notEmpty()
     .escape()
     .trim()
     .isLength({ min: 3 }),
-    body('password',"The Password must be of minimum 4 characters length").notEmpty().trim().isLength({ min: 4 }),
+    body('password',"Password minimal 4 karakter").notEmpty().trim().isLength({ min: 4 }),
 ], register);
 
 
 router.post('/login',[
-    body('username',"Invalid username")
+    body('username',"Username Salah")
     .notEmpty()
     .escape()
     .trim(),
-    body('password',"The Password must be of minimum 4 characters length").notEmpty().trim().isLength({ min: 4 }),
+    body('password',"Password harus minimal 4 karakter").notEmpty().trim().isLength({ min: 4 }),
 ],login);
 
 router.get('/getuser',getUser);

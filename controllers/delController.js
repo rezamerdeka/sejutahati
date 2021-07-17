@@ -11,7 +11,7 @@ exports.delUser = async (req,res,next) => {
             !req.headers.authorization.split(' ')[1]
         ){
             return res.status(422).json({
-                message: "Please provide the token",
+                message: "Token tidak ada",
             });
         }
 
@@ -30,11 +30,11 @@ exports.delUser = async (req,res,next) => {
         }
 
 	res.status(200).json({
-	    message: "The user has been deleted successfully.",
+	    message: "User berhasil di delete",
 	});
 	
         res.json({
-            message:"No user found"
+            message:"User tidak di temukan"
         });
 
     }

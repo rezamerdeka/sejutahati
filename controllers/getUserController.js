@@ -11,7 +11,7 @@ exports.getUser = async (req,res,next) => {
             !req.headers.authorization.split(' ')[1]
         ){
             return res.status(422).json({
-                message: "Please provide the token",
+                message: "Token tidak ada",
             });
         }
 
@@ -30,7 +30,7 @@ exports.getUser = async (req,res,next) => {
         }
 
         res.json({
-            message:"No user found"
+            message:"User tidak di temukan"
         });
         
     }

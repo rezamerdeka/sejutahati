@@ -19,14 +19,14 @@ exports.login = async (req,res,next) =>{
 
         if (row.length === 0) {
             return res.status(422).json({
-                message: "Invalid username",
+                message: "Username salah",
             });
         }
 
         const passMatch = await bcrypt.compare(req.body.password, row[0].password);
         if(!passMatch){
             return res.status(422).json({
-                message: "Incorrect password",
+                message: "Password salah",
             });
         }
 

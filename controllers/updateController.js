@@ -11,7 +11,7 @@ try {
             !req.headers.authorization.split(' ')[1]
        ){
             return res.status(422).json({
-                message: "Please provide the token",
+                message: "Token tidak ada",
             });
        }
 
@@ -38,7 +38,7 @@ try {
 
         if (update.affectedRows === 1) {
           return res.json({
-         message: "The User has been successfully updated.",
+         message: "Username berhasil di update",
         });
    }  
    }
