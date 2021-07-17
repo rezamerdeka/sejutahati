@@ -2,7 +2,7 @@ const mysql = require("mysql2");
 
 const db_connection = mysql
   .createConnection({
-    host: "localhost",
+    host: "mysqldock",
     user: "crud",
     database: "node_auth_api",
     password: "12345",
