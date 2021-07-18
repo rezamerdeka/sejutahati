@@ -2,8 +2,8 @@ const express = require('express');
 const routes = require('./routes');
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({ message: "RezaMerdeka API" });
+app.get('/', (req, res) => {
+  res.send('Reza Merdeka API')
 });
 
 app.use(express.json());
